@@ -1,4 +1,5 @@
 global using Ecommerce.Server.Data;
+global using Ecommerce.Server.Services.ProductService;
 global using Ecommerce.Shared;
 global using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,9 @@ namespace Ecommerce
             //registering DbContext
             builder.Services.AddDbContext<DataContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            //registering services
+            builder.Services.AddScoped<IProductService, ProductService>();
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();

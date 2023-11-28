@@ -23,18 +23,13 @@
     text-align: center;
 }
 
-.price {
-    color:green;
-    cursor: pointer;
-}
-
 @media(max-width: 1023.98px) {
     .media {
         flex-direction: column;
     }
 
     .media-img-wrapper {
-        width: 100px;
+        width: 100%;
         height: auto;
     }
 }

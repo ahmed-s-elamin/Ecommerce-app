@@ -1,3 +1,4 @@
+global using Ecommerce.Client.Services.CategoryService;
 global using Ecommerce.Client.Services.ProductService;
 global using Ecommerce.Shared;
 global using System.Net.Http.Json;
@@ -16,7 +17,10 @@ namespace Ecommerce.Client
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+            //registering services
             builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+
             await builder.Build().RunAsync();
         }
     }

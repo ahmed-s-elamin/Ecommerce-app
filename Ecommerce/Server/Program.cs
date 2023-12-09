@@ -1,4 +1,5 @@
 global using Ecommerce.Server.Data;
+global using Ecommerce.Server.Services.CategoryService;
 global using Ecommerce.Server.Services.ProductService;
 global using Ecommerce.Shared;
 global using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ namespace Ecommerce
 
             //registering services
             builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();

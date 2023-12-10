@@ -29,7 +29,7 @@ namespace Ecommerce.Client.Services.ProductService
             if (result != null && result.Data != null)
                 Products = result.Data;
 
-            ProductsChanged.Invoke();
+            ProductsChanged?.Invoke();
 
         }
     }
